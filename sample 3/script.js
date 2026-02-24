@@ -86,7 +86,8 @@ function init3DTilt() {
     cards.forEach(card => {
         const glow = card.querySelector('.card-glow');
         
-        let glowColor = 'rgba(211, 0, 0, 0.15)'; 
+        // Setup initial background for glow based on card theme
+        let glowColor = 'rgba(211, 0, 0, 0.15)'; // Default Red
         if (card.classList.contains('theme-hover-orange') || card.classList.contains('theme-border-orange')) {
             glowColor = 'rgba(255, 115, 0, 0.15)';
         } else if (card.classList.contains('theme-hover-green') || card.classList.contains('theme-border-green')) {
@@ -106,6 +107,7 @@ function init3DTilt() {
             
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
             
+            // Adjust shadow color based on theme
             let shadowColor = 'rgba(211, 0, 0, 0.2)';
             if (card.classList.contains('theme-hover-orange') || card.classList.contains('theme-border-orange')) shadowColor = 'rgba(255, 115, 0, 0.2)';
             if (card.classList.contains('theme-hover-green') || card.classList.contains('theme-border-green')) shadowColor = 'rgba(57, 255, 20, 0.2)';
@@ -150,6 +152,7 @@ function createWaterfall() {
     }
 }
 
+// Inject keyframes dynamically for waterfall
 const styleSheet = document.createElement("style");
 styleSheet.innerText = `
 @keyframes fallDown {
