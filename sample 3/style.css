@@ -565,7 +565,6 @@ ul { list-style: none; }
 }
 
 /* ================= Who We Help Section ================= */
-/* Violet Glowing Title */
 .gradient-violet-animated {
     background: linear-gradient(90deg, #fff, var(--neon-violet), #00f3ff, #fff);
     -webkit-background-clip: text;
@@ -581,31 +580,46 @@ ul { list-style: none; }
     margin-top: 40px;
 }
 
+/* 1. Premium Dark Glassmorphism Background */
 .help-card {
-    background: #101218; /* Very dark background to match screenshot */
-    border: 1px solid rgba(255,255,255,0.05);
+    background: linear-gradient(145deg, rgba(25, 30, 42, 0.6) 0%, rgba(10, 12, 18, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.12); /* Subtle top light reflection */
     border-radius: 16px;
     padding: 30px 25px;
     position: relative;
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy smooth transition */
     text-align: left;
 }
 
+/* 2. Elevated Hover Effect */
 .help-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(217, 70, 239, 0.4);
-    box-shadow: 0 10px 30px rgba(217, 70, 239, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(217, 70, 239, 0.4); /* Violet glow border */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(217, 70, 239, 0.15);
+    background: linear-gradient(145deg, rgba(30, 35, 50, 0.8) 0%, rgba(10, 12, 18, 0.9) 100%);
 }
 
-/* Subtle pattern inside the cards matching the screenshot */
+/* 3. Subtle Violet Spotlight in the corner */
 .help-card-bg {
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background-image: radial-gradient(rgba(255,255,255,0.04) 2px, transparent 2px);
-    background-size: 20px 20px;
+    top: -40px; 
+    right: -40px;
+    width: 120px; 
+    height: 120px;
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
     z-index: 0;
-    pointer-events: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Spotlight expands and glows on hover */
+.help-card:hover .help-card-bg {
+    transform: scale(2.5);
+    opacity: 0.8;
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.2) 0%, transparent 70%);
 }
 
 .help-card h4 {
@@ -624,6 +638,34 @@ ul { list-style: none; }
     margin: 0;
     position: relative;
     z-index: 1;
+}
+
+/* Bottom Client Feedback Banner */
+.help-cta-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.help-cta-banner p {
+    font-size: 1rem;
+    color: #a0aab2;
+    margin: 0;
+}
+
+.btn-gradient-violet {
+    background: linear-gradient(135deg, #d946ef 0%, #ff003c 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 20px rgba(217, 70, 239, 0.3);
+}
+.btn-gradient-violet:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(217, 70, 239, 0.5);
+    color: #fff;
 }
 
 /* Bottom Client Feedback Banner */
