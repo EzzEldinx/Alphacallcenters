@@ -14,6 +14,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ================= FORCE MOBILE FIXES (HTML LEVEL) V7 ================= */
+        /* رجعنا الحركة الأصلية الهادية جداً مع الحفاظ على الحجم الصغير */
+        @keyframes floatMobileOriginal {
+            0% { transform: translateY(0) scale(0.5) rotate(0deg); }
+            100% { transform: translateY(-15px) scale(0.5) rotate(4deg); } /* حركة خفيفة جداً زي الديسكتوب */
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text-block, .hero-subtitle {
+                position: relative !important; z-index: 50 !important; 
+            }
+            .hero-title, .glitch, .gradient-text-animated {
+                font-size: 2.2rem !important; line-height: 1.4 !important; 
+                white-space: normal !important; display: block !important; padding-bottom: 10px !important;
+            }
+        
+            .floating-pills {
+                display: block !important; opacity: 1 !important; 
+                pointer-events: none !important; z-index: 10 !important;
+            }
+            
+            .f-pill {
+                /* تطبيق الحركة الهادية الجديدة */
+                animation: floatMobileOriginal 3s ease-in-out infinite alternate !important; 
+                height: auto !important; 
+            }
+            
+            .text-pill { display: flex !important; }
+            .icon-pill { display: flex !important; }
+        
+            /* أماكنهم المظبوطة بعيد عن النص وبدون مط مطاطي */
+            .pill-1 { top: 5% !important; left: -5% !important; bottom: auto !important; }
+            .pill-2 { top: 12% !important; right: -5% !important; bottom: auto !important; }
+            .pill-3 { bottom: 22% !important; left: -5% !important; top: auto !important; }
+            .pill-4 { bottom: 12% !important; right: -5% !important; top: auto !important; } 
+        
+            /* إخفاء الزيادات */
+            .pill-5, .pill-6, .pill-7, .pill-8 { display: none !important; }
+            .vertical-marquee-container { display: none !important; }
+        
+            /* How it works */
+            #how-it-works, .how-it-works-section, .how-it-works-section .container, .snake-svg-wrapper {
+                display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important;
+            }
+            .snake-svg-wrapper { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; padding-bottom: 20px !important; }
+            .snake-main-svg { width: 1000px !important; max-width: none !important; height: auto !important; }
+        
+            h1, h2, h3, .strong-title { font-size: 2rem !important; word-wrap: break-word !important; }
+            body, html { overflow-x: hidden !important; }
+        }
+        </style>
 </head>
 <body>
 
