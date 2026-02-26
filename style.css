@@ -1365,3 +1365,65 @@ ul { list-style: none; }
         padding-right: 50px !important; 
     }
 }
+
+
+
+/* ================= PREMIUM DESIGNER SIGNATURE ================= */
+.designer-signature {
+    font-size: 0.9rem;
+    color: #475569;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+
+/* أنيميشن تقليبة الألوان RGB */
+@keyframes rgbShine {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+.designer-link-pro {
+    font-weight: 900;
+    /* الجراديانت الجديد اللي فيه كل الألوان الفخمة */
+    background: linear-gradient(90deg, #ff003c, #d946ef, #00f3ff, #ff7300, #ff003c);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbShine 4s linear infinite; /* تشغيل الألوان باستمرار */
+    text-decoration: none;
+    position: relative;
+    padding: 0 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* لون الأيقونة (علامة البرق) */
+.designer-link-pro i {
+    -webkit-text-fill-color: #00f3ff; /* خليت البرق سماوي عشان ينطق مع الألوان */
+    font-size: 0.85rem;
+}
+
+/* خط النيون اللي بيظهر لما تقف بالماوس */
+.designer-link-pro::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #00f3ff, #ff003c); /* الخط كمان بقى بجراديانت */
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
+}
+
+.designer-link-pro:hover::after {
+    width: 100%;
+}
+
+.designer-link-pro:hover {
+    filter: drop-shadow(0 0 8px rgba(217, 70, 239, 0.6)); /* توهج بنفسجي لما تقف عليه */
+}
