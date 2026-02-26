@@ -304,6 +304,43 @@
             }
         }
 
+        .console-quote {
+            margin-top: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #ff003c;
+            display: inline-block;
+            max-width: 90%;
+            animation: fadeInQuote 1.5s ease-out;
+        }
+
+        .console-prompt {
+            color: #39ff14; /* لون أخضر تيرمنال */
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .console-text {
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInQuote {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* تعديل بسيط للموبايل */
+        @media (max-width: 768px) {
+            .console-quote {
+                font-size: 0.75rem;
+                padding: 10px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -376,6 +413,13 @@
             <a href="https://www.instagram.com/ezzeldiinx" target="_blank" class="btn-social instagram"><i class="fab fa-instagram"></i></a>
             <a href="mailto:ezzeldin55x@gmail.com" class="btn-social gmail" title="Email Me"><i class="fas fa-envelope"></i></a>
             <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Project</a>
+        </div>
+
+        <div class="console-quote">
+            <span class="console-prompt">root@Ezz-pc:~$</span> 
+            <span class="console-text">
+                "In a world full of noise, I architect the silence between 0s and 1s to <span class="rgb-text">CODE LEGACY SYSTEMS ...</span>"
+            </span>
         </div>
 
     </div>
